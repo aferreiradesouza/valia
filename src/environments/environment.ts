@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: 'https://hackathonvaliaapi20191025091622.azurewebsites.net'
 };
 
 /*
