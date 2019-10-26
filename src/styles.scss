@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+h1 {
+    margin-bottom: 50px;
+    border-bottom: 1px solid #ccc !important;
+}
+
+.btn-primary {
+    color: #fff;
+    /*background-color: #003f8e;*/
+    border-color: #5f7fb5;	
+}
+
+.logo {
+	background-color: #FFF;
+	margin: 0;
+	padding: 15px 20px;
+}
+
+.navbar {
+    border-top: 8px solid #00418e;
+	padding: 0;	
+	margin-bottom: 50px;
+}
+
+.card .card-body .fa {
+    font-size: 45px;
+    opacity: 0.5;
+}
+
+.card:hover {
+	box-shadow: 3px 3px 10px #000;
+	cursor: pointer;
+	transition: all 0.3s;
+    transform: scale(1.02);
+    background-color: #00418e !important;
+}
+
+.card:hover .card-body .fa{
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.card-active {
+	cursor: pointer;
+	transition: all 0.3s;
+    transform: scale(1.02);
+    background-color: #00418e !important;
+}
+
+.user {
+    color: #FFF;
+    font-size: 30px;
+}
+
+.nome-sistema {
+    color: #FFF;
+    font-size: 20px;
+}
+
+.form-table .row {
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 10px;
+}
+
+.form-table .row:last-child {
+    border-bottom: 0;
+    padding-bottom: 10px;
+}
+
+.form-table label {
+    font-weight: bold;
+}
