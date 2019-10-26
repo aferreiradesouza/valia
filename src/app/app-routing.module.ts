@@ -12,7 +12,7 @@ import { AnaliseCriticasComponent } from './paginas/analise-criticas/analise-cri
 
 const routes: Routes = [
 
-    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'api', component: ApiComponent },
     { path: 'layout-personalizado', component: LayoutPersonalizadoComponent, resolve: { data: LayoutPersonalizadoResolver } },
