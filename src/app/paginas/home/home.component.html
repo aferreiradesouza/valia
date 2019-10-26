@@ -264,3 +264,15 @@
 
 
 </div>
+<br>
+<div>
+    layout Patrocinador:
+    {{layout_patrocinador}}<br>
+    layout_valia:
+    {{layout_valia}}
+</div>
+<br>
+<div *ngFor="let item of lista">
+    {{ item.layout_patrocinador}} - {{formatarLabelLista(item.layout_valia)}}&nbsp;&nbsp;&nbsp;<span (click)="remover(item)">x</span>
+</div>
+<button (click)="salvar()">Salvar</button>
