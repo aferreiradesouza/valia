@@ -14,10 +14,28 @@ enum Contribuicoes {
 export class ContribuicoesEnum {
     static obterDescricao(num: number): string {
         switch (Contribuicoes[num]) {
-            case 'Brasil': return 'Brasil';
-            case 'Outro': return 'Outro';
-            default: return undefined;
+            case 'codigoOrdem': return 'Código Ordem';
+            case 'codigoEmpresa': return 'Código Empresa';
+            case 'numMatricula': return 'Número da Metrícula';
+            case 'codigoVerba': return 'Código da Verba';
+            case 'anoPagamento': return 'Ano de Pagamento';
+            case 'mesPagamento': return 'Mês de Pagamento';
+            case 'anoCompetencia': return 'Ano de Competencia';
+            case 'mesCompetencia': return 'Mês de Competência';
+            case 'valorFicha': return 'Valor da Ficha';
+            case 'Livre': return 'Livre';
         }
+    }
+
+    static obterEnum() {
+        let map: { id: number; name: string }[] = [];
+
+        for (var n in Contribuicoes) {
+            if (typeof Contribuicoes[n] === 'number') {
+                map.push({ id: <any>Contribuicoes[n], name: n });
+            }
+        }
+        return map;
     }
 
     static obterNumerador(str: string): number {

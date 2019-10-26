@@ -1,0 +1,83 @@
+<div class="navbar navbar-expand-lg navbar-default bg-primary">
+    <div class="container">
+        <div class="col-auto logo">
+            <img src="./assets/img/logo.png" />
+        </div>
+        <div class="col-auto text-center nome-sistema">
+            Portal de Administração de Arquivos
+        </div>
+        <div class="text-right">
+            <i class="fa fa-user-circle user"></i>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3" (click)="irAPI()">
+                <div class="card-body">
+                    <h4 class="card-title float-left">API</h4>
+                    <i class="fa fa-code float-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3 card-active" (click)="voltar()">
+                <div class="card-body">
+                    <h4 class="card-title float-left">Layout Valia</h4>
+                    <i class="fa fa-list-alt float-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3" (click)="irLayoutPersonalizado()">
+                <div class="card-body">
+                    <h4 class="card-title float-left">Layout Personalizado</h4>
+                    <i class="fa fa-user-edit float-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h1 class="pt-3">Layout Valia</h1>
+    <fieldset class="form-table">
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Arquivo Cadastro:</label>
+            <div class="col-sm-9">
+                <input type="file" accept=".txt" [(ngModel)]="cadastro" readonly="" class="form-control-plaintext">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Arquivo Beneficiários:</label>
+            <div class="col-sm-9">
+                <input type="file" accept=".txt" [(ngModel)]="beneficiarios" readonly="" class="form-control-plaintext">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Arquivo IN26:</label>
+            <div class="col-sm-9">
+                <input type="file" accept=".txt" [(ngModel)]="IN26" readonly="" class="form-control-plaintext">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Arquivo de Arrecadação:</label>
+            <div class="col-sm-9">
+                <input type="file" accept=".txt" [(ngModel)]="arrecadacao" readonly="" class="form-control-plaintext">
+            </div>
+        </div>
+
+        <div class="row-button">
+            <button class="btn btn-primary btn-lg" [disabled]="!disabledButton()">Submeter Arquivos</button>
+        </div>
+
+    </fieldset>
+</div>

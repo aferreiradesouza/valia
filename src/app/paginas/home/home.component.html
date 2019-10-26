@@ -17,7 +17,7 @@
 
     <div class="row">
         <div class="col-md-4">
-            <div class="card text-white bg-primary mb-3">
+            <div class="card text-white bg-primary mb-3 card-active">
                 <div class="card-body">
                     <h4 class="card-title float-left">API</h4>
                     <i class="fa fa-code float-right"></i>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="col-md-4">
-            <div class="card text-white bg-primary mb-3">
+            <div class="card text-white bg-primary mb-3" (click)="configurarLayoutValia(2)">
                 <div class="card-body">
                     <h4 class="card-title float-left">Layout Valia</h4>
                     <i class="fa fa-list-alt float-right"></i>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="col-md-4">
-            <div class="card text-white bg-primary mb-3">
+            <div class="card text-white bg-primary mb-3" (click)="configurarLayoutPersonalizado()">
                 <div class="card-body">
                     <h4 class="card-title float-left">Layout Personalizado</h4>
                     <i class="fa fa-user-edit float-right"></i>
@@ -43,7 +43,6 @@
             </div>
         </div>
     </div>
-
 
 
     <h1 class="pt-3">API</h1>
@@ -98,181 +97,3 @@
             </div>
         </fieldset>
     </form>
-
-
-
-
-
-
-
-
-
-    <h1 class="pt-3">Layout Valia</h1>
-    <form>
-        <fieldset class="form-table">
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Arquivo Cadastro:</label>
-                <div class="col-sm-9">
-                    <input type="file" readonly="" class="form-control-plaintext">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Arquivo Beneficiários:</label>
-                <div class="col-sm-9">
-                    <input type="file" readonly="" class="form-control-plaintext">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Arquivo IN26:</label>
-                <div class="col-sm-9">
-                    <input type="file" readonly="" class="form-control-plaintext">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Arquivo de Arrecadação:</label>
-                <div class="col-sm-9">
-                    <input type="file" readonly="" class="form-control-plaintext">
-                </div>
-            </div>
-
-            <div class="row-button">
-                <button class="btn btn-primary btn-lg">Submeter Arquivos</button>
-            </div>
-
-        </fieldset>
-    </form>
-
-
-
-
-
-
-
-
-    <h1 class="pt-3">Layout Personalizado</h1>
-    <form>
-        <fieldset class="form-table">
-
-            <div class="form-group row">
-                <label class="col-sm-9 col-form-label">Arquivo de Cadastro</label>
-                <label class="col-sm-3 col-form-label">Layout</label>
-                <div class="col-sm-9">
-                    <input type="file" readonly="" class="form-control-plaintext">
-                </div>
-                <div class="col-sm-3">
-                    <button class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Criar Layout</button>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-9 col-form-label">Arquivo de Beneficiários</label>
-                <label class="col-sm-3 col-form-label">Layout</label>
-                <div class="col-sm-9">
-                    <input type="file" readonly="" class="form-control-plaintext">
-                </div>
-                <div class="col-sm-3">
-                    <button class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Editar Layout</button>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-9 col-form-label">Arquivo IN26</label>
-                <label class="col-sm-3 col-form-label">Layout</label>
-                <div class="col-sm-9">
-                    <input type="file" readonly="" class="form-control-plaintext">
-                </div>
-                <div class="col-sm-3">
-                    <button class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Editar Layout</button>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-9 col-form-label">Arquivo IN26</label>
-                <label class="col-sm-3 col-form-label">Layout</label>
-                <div class="col-sm-9">
-                    <input type="file" readonly="" class="form-control-plaintext">
-                </div>
-                <div class="col-sm-3">
-                    <button class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Editar Layout</button>
-                </div>
-            </div>
-
-            <div class="row-button">
-                <button class="btn btn-primary btn-lg">Submeter Arquivos</button>
-            </div>
-
-        </fieldset>
-    </form>
-
-
-
-
-
-
-
-
-    <h1 class="pt-3">Configurar Layout - Cadastro</h1>
-
-    <form>
-        <fieldset class="form-table">
-            <div class="form-group row">
-                <label class="col-sm-5 col-form-label text-center">Meu Layout <span
-                        class="badge badge-pill badge-info">50</span></label>
-                <label class="col-sm-5 col-form-label text-center">Layout Valia <span
-                        class="badge badge-pill badge-info">55</span></label>
-                <label class="col-sm-2 col-form-label text-center"></label>
-
-                <div class="col-sm-5 text-center">
-                    <select class="form-control">
-                        <option selected>Selecione</option>
-                        <option value="Campo1">Campo 1</option>
-                    </select>
-                    <i class="fa fa-arrow-down arrow-down-combo"></i>
-                </div>
-                <div class="col-sm-5 text-center">
-                    <select class="form-control">
-                        <option selected>Selecione</option>
-                        <option value="Campo1">Campo 1</option>
-                    </select>
-                    <i class="fa fa-arrow-down arrow-down-combo"></i>
-                </div>
-                <div class="col-sm-2 text-center">
-                    <button class="btn btn-primary">Relacionar</button>
-                </div>
-            </div>
-        </fieldset>
-    </form>
-
-    <div class="row row-border" *ngFor="let item of ' '.repeat(48).split('')">
-        <div class="col-sm-5 text-center">
-            Campo 1
-        </div>
-        <div class="col-sm-5 text-center">
-            Campo 2
-        </div>
-        <div class="col-sm-2 text-center">
-            <i class="fa fa-trash-alt text-danger ico-trash" title="Excluir"></i>
-        </div>
-    </div>
-    
-    <div class="row-button">
-        <button class="btn btn-primary btn-lg">Criar Layout</button>
-    </div>
-
-
-</div>
-<br>
-<div>
-    layout Patrocinador:
-    {{layout_patrocinador}}<br>
-    layout_valia:
-    {{layout_valia}}
-</div>
-<br>
-<div *ngFor="let item of lista">
-    {{ item.layout_patrocinador}} - {{formatarLabelLista(item.layout_valia)}}&nbsp;&nbsp;&nbsp;<span (click)="remover(item)">x</span>
-</div>
-<button (click)="salvar()">Salvar</button>

@@ -1,0 +1,183 @@
+<div class="navbar navbar-expand-lg navbar-default bg-primary">
+    <div class="container">
+        <div class="col-auto logo">
+            <img src="./assets/img/logo.png" />
+        </div>
+        <div class="col-auto text-center nome-sistema">
+            Portal de Administração de Arquivos
+        </div>
+        <div class="text-right">
+            <i class="fa fa-user-circle user"></i>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3" (click)="irAPI()">
+                <div class="card-body">
+                    <h4 class="card-title float-left">API</h4>
+                    <i class="fa fa-code float-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3" (click)="irLayoutValia()">
+                <div class="card-body">
+                    <h4 class="card-title float-left">Layout Valia</h4>
+                    <i class="fa fa-list-alt float-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3 card-active">
+                <div class="card-body">
+                    <h4 class="card-title float-left">Layout Personalizado</h4>
+                    <i class="fa fa-user-edit float-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-container *ngIf="step === 1">
+        <h1 class="pt-3">Layout Personalizado</h1>
+        <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+            <fieldset class="form-table">
+                <div class="form-group row">
+                    <label class="col-sm-9 col-form-label">Arquivo de Empregados</label>
+                    <label class="col-sm-3 col-form-label">Layout</label>
+                    <div class="col-sm-9">
+                        <input #empregadosInput type="file" accept=".csv" name="empregados" [(ngModel)]="form.cadastro"
+                            (change)="onFileSelect($event.target)" readonly="" class="form-control-plaintext">
+                    </div>
+                    <div class="col-sm-3">
+                        <button *ngIf="!verificarExistenciaTemplate(1)" class="btn btn-sm btn-success"
+                            (click)="setStep(2, 1, 'criar')" [disabled]="!form.cadastro"><i class="fa fa-plus"></i>
+                            Criar
+                            Layout</button>
+                        <button *ngIf="verificarExistenciaTemplate(1)" class="btn btn-sm btn-primary"
+                            (click)="setStep(2, 1, 'editar')" [disabled]="!form.cadastro"><i class="fa fa-edit"></i>
+                            Editar
+                            Layout</button>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-9 col-form-label">Arquivo de Dependentes</label>
+                    <label class="col-sm-3 col-form-label">Layout</label>
+                    <div class="col-sm-9">
+                        <input #dependentesInput type="file" accept=".csv" name="dependentes"
+                            [(ngModel)]="form.beneficiarios" (change)="onFileSelect($event.target)" readonly=""
+                            class="form-control-plaintext">
+                    </div>
+                    <div class="col-sm-3">
+                        <button *ngIf="!verificarExistenciaTemplate(2)" class="btn btn-sm btn-success"
+                            (click)="setStep(2, 2, 'criar')" [disabled]="!form.beneficiarios"><i class="fa fa-plus"></i>
+                            Criar
+                            Layout</button>
+                        <button *ngIf="verificarExistenciaTemplate(2)" class="btn btn-sm btn-primary"
+                            (click)="setStep(2, 2, 'editar')" [disabled]="!form.beneficiarios"><i
+                                class="fa fa-edit"></i> Editar
+                            Layout</button>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-9 col-form-label">Arquivo IN26</label>
+                    <label class="col-sm-3 col-form-label">Layout</label>
+                    <div class="col-sm-9">
+                        <input #in26Input type="file" accept=".csv" name="in26" [(ngModel)]="form.in26"
+                            (change)="onFileSelect($event.target)" readonly="" class="form-control-plaintext">
+                    </div>
+                    <div class="col-sm-3">
+                        <button *ngIf="!verificarExistenciaTemplate(4)" class="btn btn-sm btn-success"
+                            (click)="setStep(2, 4, 'criar')" [disabled]="!form.in26"><i class="fa fa-plus"></i> Criar
+                            Layout</button>
+                        <button *ngIf="verificarExistenciaTemplate(4)" class="btn btn-sm btn-primary"
+                            (click)="setStep(2, 4, 'editar')" [disabled]="!form.in26"><i class="fa fa-edit"></i> Editar
+                            Layout</button>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-9 col-form-label">Arquivo de Arrecadação</label>
+                    <label class="col-sm-3 col-form-label">Layout</label>
+                    <div class="col-sm-9">
+                        <input #arrecadacaoInput type="file" accept=".csv" name="arrecadacao"
+                            [(ngModel)]="form.arrecadacao" (change)="onFileSelect($event.target)" readonly=""
+                            class="form-control-plaintext">
+                    </div>
+                    <div class="col-sm-3">
+                        <button *ngIf="!verificarExistenciaTemplate(3)" class="btn btn-sm btn-success"
+                            (click)="setStep(2, 3, 'criar')" [disabled]="!form.arrecadacao"><i class="fa fa-plus"></i>
+                            Criar
+                            Layout</button>
+                        <button *ngIf="verificarExistenciaTemplate(3)" class="btn btn-sm btn-primary"
+                            (click)="setStep(2, 3, 'editar')" [disabled]="!form.arrecadacao"><i class="fa fa-edit"></i>
+                            Editar
+                            Layout</button>
+                    </div>
+                </div>
+
+                <div class="row-button">
+                    <button class="btn btn-primary btn-lg" type="submit">Submeter Arquivos</button>
+                </div>
+
+            </fieldset>
+        </form>
+    </ng-container>
+
+    <ng-container *ngIf="step === 2">
+        <h1 class="pt-3">Configurar Layout - Cadastro</h1>
+
+        <fieldset class="form-table">
+            <div class="form-group row">
+                <label class="col-sm-5 col-form-label text-center">Meu Layout <span class="badge badge-pill"
+                        [ngClass]="{'badge-info' : headers.length, 'badge-success' : !headers.length}">{{!headers.length ? 'OK' : headers.length}}</span></label>
+                <label class="col-sm-5 col-form-label text-center">Layout Valia <span class="badge badge-pill"
+                        [ngClass]="{'badge-info' : listaLayoutValia.length, 'badge-success' : !listaLayoutValia.length}">{{!listaLayoutValia.length ? 'OK' : listaLayoutValia.length}}</span></label>
+                <label class="col-sm-2 col-form-label text-center"></label>
+
+                <div class="col-sm-5 text-center">
+                    <select class="form-control" [(ngModel)]="layout_patrocinador">
+                        <option [value]="0">Selecionar</option>
+                        <option [value]="item" *ngFor="let item of headers">{{item}}</option>
+                    </select>
+                    <i class="fa fa-arrow-down arrow-down-combo" *ngIf="lista.length"></i>
+                </div>
+                <div class="col-sm-5 text-center">
+                    <select class="form-control" [(ngModel)]="layout_valia">
+                        <option [value]="0">Selecionar</option>
+                        <option [value]="item.id" *ngFor="let item of listaLayoutValia">{{formatarLabel(item.id)}}
+                        </option>
+                    </select>
+                    <i class="fa fa-arrow-down arrow-down-combo" *ngIf="lista.length"></i>
+                </div>
+                <div class="col-sm-2 text-center">
+                    <button class="btn btn-primary" (click)="relacionar()"
+                        [disabled]="!layout_valia || !layout_patrocinador">Relacionar</button>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="row row-border" *ngFor="let item of lista">
+            <div class="col-sm-5 text-center">
+                {{item.layout_patrocinador}}
+            </div>
+            <div class="col-sm-5 text-center">
+                {{formatarLabel(item.layout_valia)}}
+            </div>
+            <div class="col-sm-2 text-center">
+                <i class="fa fa-trash-alt text-danger ico-trash" title="Excluir" (click)="remover(item)"></i>
+            </div>
+        </div>
+
+        <div class="row-button">
+            <button class="btn btn-primary btn-lg" (click)="criarLayout()">Criar Layout</button>
+        </div>
+    </ng-container>
+</div>

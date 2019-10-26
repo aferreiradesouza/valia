@@ -12,11 +12,26 @@ import { ContribuicoesEnum } from './enums/contribuicoes.enum';
 import { DependentesEnum } from './enums/dependentes.enum';
 import { In26Enum } from './enums/in26.enum';
 import { StorageMemoryService } from './services/storage-memory.service';
+import { LayoutPersonalizadoComponent } from './paginas/layout-personalizado/layout-personalizado.component';
+import { LayoutValiaComponent } from './paginas/layout-valia/layout-valia.component';
+import { LayoutPersonalizadoResolver } from './paginas/layout-personalizado/layout-personalizado.resolve';
+import { AjaxService } from './services/ajax.service';
+import { UtilService } from './services/util.services';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
+
 
 const PAGINAS = [
   HomeComponent,
-  LoginComponent
+  LoginComponent,
+  LayoutPersonalizadoComponent,
+  LayoutValiaComponent
 ];
+
+const RESOLVERS = [
+  LayoutPersonalizadoResolver
+]
 
 const ENUMS = [
   EmpregadosEnum,
@@ -34,9 +49,12 @@ const ENUMS = [
     AppRouting,
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    NgProgressModule,
+    NgProgressHttpModule
   ],
-  providers: [...ENUMS, StorageMemoryService],
+  providers: [...ENUMS, StorageMemoryService, ...RESOLVERS, AjaxService, UtilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
