@@ -188,6 +188,7 @@ export class LayoutPersonalizadoComponent implements OnInit {
                 title: 'Sucesso!',
                 type: 'success',
                 text: 'Seus arquivos foram enviados com sucesso.',
+                footer: `<a href="/detalhe-remessa">Ver detalhes</a>`,
                 confirmButtonText: 'OK!',
             }).then((result) => {
                 if (result.value) {
@@ -216,6 +217,7 @@ export class LayoutPersonalizadoComponent implements OnInit {
             ) {
                 Swal.fire({
                     title: 'Sucesso!',
+                    type: 'success',
                     text: 'Seus arquivos foram enviados com sucesso.',
                     footer: `<a href="/detalhe-remessa">Ver detalhes</a>`
                 })

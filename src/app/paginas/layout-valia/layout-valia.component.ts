@@ -30,11 +30,28 @@ export class LayoutValiaComponent implements OnInit {
     }
 
     send() {
+        let timerInterval
         Swal.fire({
-            title: 'Sucesso!',
-            type: 'success',
-            text: 'Seus arquivos foram enviados com sucesso.',
-            confirmButtonText: 'OK!',
-        });
+            title: 'Aguarde um momento',
+            timer: 2000,
+            onBeforeOpen: () => {
+                Swal.showLoading();
+            },
+            onClose: (dismiss) => {
+                clearInterval(timerInterval)
+            }
+        }).then((result) => {
+            if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.timer
+            ) {
+                Swal.fire({
+                    title: 'Sucesso!',
+                    type: 'success',
+                    text: 'Seus arquivos foram enviados com sucesso.',
+                    footer: `<a href="/detalhe-remessa">Ver detalhes</a>`
+                })
+            }
+        })
     }
 }
