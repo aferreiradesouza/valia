@@ -127,7 +127,7 @@ export class LayoutPersonalizadoComponent implements OnInit {
     }
 
     irAPI() {
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/api');
     }
 
     setStep(num: 1 | 2, cod?: 1 | 2 | 3 | 4, type?: 'criar' | 'editar') {

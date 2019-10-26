@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './paginas/home/home.component';
+import { ApiComponent } from './paginas/api/api.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { AppRouting } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,12 +21,18 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
+import { DashboardComponent } from './paginas/dashboard/dashboard.component';
+import { DetalheRemessaComponent } from './paginas/detalhe-remessa/detalhe-remessa.component';
+import { AnaliseCriticasComponent } from './paginas/analise-criticas/analise-criticas.component';
 
 const PAGINAS = [
-  HomeComponent,
+  ApiComponent,
   LoginComponent,
   LayoutPersonalizadoComponent,
-  LayoutValiaComponent
+  LayoutValiaComponent,
+  DashboardComponent,
+  DetalheRemessaComponent,
+  AnaliseCriticasComponent
 ];
 
 const RESOLVERS = [

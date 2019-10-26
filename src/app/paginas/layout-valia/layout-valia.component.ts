@@ -17,7 +17,7 @@ export class LayoutValiaComponent implements OnInit {
     ngOnInit() { }
 
     irAPI() {
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/api');
     }
 
     irLayoutPersonalizado() {

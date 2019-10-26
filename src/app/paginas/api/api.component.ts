@@ -4,11 +4,11 @@ import { StorageMemoryService } from 'src/app/services/storage-memory.service';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: 'home.component.html'
+    selector: 'app-api',
+    templateUrl: 'api.component.html'
 })
 
-export class HomeComponent implements OnInit {
+export class ApiComponent implements OnInit {
 
     public step: 1 | 2 | 3;
 

@@ -2,9 +2,26 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/yeti/bootswatch";
 
+html {
+    height: 100%;
+}
+
+body {
+    height:100%;
+    min-height: 100%;
+    margin:0px;
+    padding:0px;
+    height:100%;
+}
+
 h1 {
     margin-bottom: 50px;
     border-bottom: 1px solid #ccc !important;
+    color: #00418e; 
+}
+
+h2 {
+    color: #00418e; 
 }
 
 .btn-primary {
@@ -16,13 +33,12 @@ h1 {
 .logo {
 	background-color: #FFF;
 	margin: 0;
-	padding: 15px 20px;
+    padding: 15px 20px;
 }
 
-.navbar {
+.navbar-top {
     border-top: 8px solid #00418e;
 	padding: 0;	
-	margin-bottom: 50px;
 }
 
 .card .card-body .fa {
@@ -30,7 +46,12 @@ h1 {
     opacity: 0.5;
 }
 
-.card:hover {
+.card .card-body .number-counter {
+    font-size: 45px;
+    opacity: 0.5;
+}
+
+.card-over:hover {
 	box-shadow: 3px 3px 10px #000;
 	cursor: pointer;
 	transition: all 0.3s;
@@ -38,16 +59,13 @@ h1 {
     background-color: #00418e !important;
 }
 
-.card:hover .card-body .fa{
+.card-over:hover .card-body .fa {
     opacity: 1;
     transition: all 0.3s;
 }
 
-.card-active {
-	cursor: pointer;
-	transition: all 0.3s;
-    transform: scale(1.02);
-    background-color: #00418e !important;
+.card-no-link:hover {
+    border: 1px solid #008cba;
 }
 
 .border-bottom {
@@ -55,13 +73,16 @@ h1 {
 }
 
 .user {
-    color: #FFF;
-    font-size: 30px;
+   font-size: 13px;
+   margin-left: 10px;
+   color: #008cba !important;
+   padding: 6px 15px;
+   cursor: pointer;
 }
 
 .nome-sistema {
     color: #FFF;
-    font-size: 20px;
+    font-size: 26px;
 }
 
 .form-table .row {
@@ -113,4 +134,40 @@ h1 {
 .row-button {
     margin: 40px;
     text-align: center;
+}
+
+div {
+    /*border: 1px solid red;*/
+}
+
+.topbar-patrocionadora {
+    font-size: 13px;
+    padding: 10px;
+}
+
+.badge-light {
+    color: #222;
+    background-color: #e0e0e0;
+}
+
+.card-login {
+    margin-top: 20%;
+}
+
+.menu {
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    box-shadow:  5px 5px 5px #CCC;
+    padding: 0;
+}
+
+.menu .navbar-nav .nav-item .nav-link {
+    color: #333;
+    padding: 15px 15px;
+}
+
+.menu .navbar-nav .nav-item .nav-link:hover {
+    padding: 15px 15px;
+    color: #FFF;
+    background-color: #00418e;
 }
