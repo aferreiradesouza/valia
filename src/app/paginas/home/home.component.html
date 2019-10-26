@@ -1,14 +1,32 @@
-<div class="row">
-    <div class="col-sm">
-        123
-    </div>
-    <div class="col-sm">
-        123
-    </div>
-    <div class="col-sm">
-        123
-    </div>
-    <div class="col-sm">
-        123
-    </div>
+<input #input type="file" (change)="onFileSelect($event.target)" name="myfile">
+<br>
+<br>
+<br>
+
+<div *ngIf="headers.length">
+    layout Patrocinador: {{headers.length}}
+    <select name="example" [(ngModel)]="layout_patrocinador">
+        <option [value]="0">Selecionar</option>
+        <option [value]="item" *ngFor="let item of headers">{{item}}</option>
+    </select>
+    <br>
+    layout Valia: {{listaLayoutValia.length}}
+    <select name="example" [(ngModel)]="layout_valia">
+        <option [value]="0">Selecionar</option>
+        <option [value]="item.id" *ngFor="let item of listaLayoutValia">{{formatarLabel(item.id)}}</option>
+    </select>
+
+    <button (click)="relacionar()">relacionar</button>
 </div>
+<br>
+<div>
+    layout Patrocinador:
+    {{layout_patrocinador}}<br>
+    layout_valia:
+    {{layout_valia}}
+</div>
+<br>
+<div *ngFor="let item of lista">
+    {{ item.layout_patrocinador}} - {{formatarLabelLista(item.layout_valia)}}&nbsp;&nbsp;&nbsp;<span (click)="remover(item)">x</span>
+</div>
+<button (click)="salvar()">Salvar</button>
