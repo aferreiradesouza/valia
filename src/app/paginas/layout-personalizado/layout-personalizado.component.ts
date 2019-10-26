@@ -30,7 +30,12 @@ export class LayoutPersonalizadoComponent implements OnInit {
     public beneficiarios: any;
     public in26: any;
     public arrecadacao: any;
-    public form = {}
+    public form = {
+        cadastro: '',
+        beneficiarios: '',
+        in26: '',
+        arrecadacao: '',
+    }
 
     @ViewChild('empregadosInput', { static: false }) empregadosInput: any;
     @ViewChild('dependentesInput', { static: false }) dependentesInput: any;
