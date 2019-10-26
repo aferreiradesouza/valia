@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-detalhe-remessa',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DetalheRemessaComponent implements OnInit {
-    constructor() { }
+    constructor(public router: Router) { }
 
     ngOnInit() { }
+
+    irCriticas() {
+        this.router.navigateByUrl('analise-criticas');
+    }
 }
