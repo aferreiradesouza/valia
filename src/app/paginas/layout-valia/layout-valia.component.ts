@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-layout-valia',
@@ -28,7 +29,12 @@ export class LayoutValiaComponent implements OnInit {
         return this.cadastro || this.beneficiarios || this.arrecadacao || this.IN26
     }
 
-    configurarLayoutValia(numero) {
-
+    send() {
+        Swal.fire({
+            title: 'Sucesso!',
+            type: 'success',
+            text: 'Seus arquivos foram enviados com sucesso.',
+            confirmButtonText: 'OK!',
+        });
     }
 }

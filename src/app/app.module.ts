@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ApiComponent } from './paginas/api/api.component';
@@ -58,7 +58,8 @@ const ENUMS = [
     FormsModule,
     HttpClientModule,
     NgProgressModule,
-    NgProgressHttpModule
+    NgProgressHttpModule,
+    ReactiveFormsModule
   ],
   providers: [...ENUMS, StorageMemoryService, ...RESOLVERS, AjaxService, UtilService],
   bootstrap: [AppComponent]

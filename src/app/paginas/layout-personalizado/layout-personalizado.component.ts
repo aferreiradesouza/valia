@@ -5,6 +5,8 @@ import { DependentesEnum } from 'src/app/enums/dependentes.enum';
 import { ContribuicoesEnum } from 'src/app/enums/contribuicoes.enum';
 import { In26Enum } from 'src/app/enums/in26.enum';
 import { UtilService } from 'src/app/services/util.services';
+import { FormGroup, FormControl } from '@angular/forms';
+import Swal from 'sweetalert2'
 
 export interface ILayoutPersonalizado {
     layout: any;
@@ -26,16 +28,10 @@ export class LayoutPersonalizadoComponent implements OnInit {
     public data: ILayoutPersonalizado;
     public codSelected: 1 | 2 | 3 | 4;
 
-    public cadastro: any;
-    public beneficiarios: any;
-    public in26: any;
-    public arrecadacao: any;
-    public form = {
-        cadastro: '',
-        beneficiarios: '',
-        in26: '',
-        arrecadacao: '',
-    }
+    public empregados = '';
+    public dependentes = '';
+    public in26 = '';
+    public arrecadacao = '';
 
     @ViewChild('empregadosInput', { static: false }) empregadosInput: any;
     @ViewChild('dependentesInput', { static: false }) dependentesInput: any;
@@ -73,7 +69,6 @@ export class LayoutPersonalizadoComponent implements OnInit {
                 const result = csvContent.split(/(\r\n|\n|\r)/gm)[0].split(';');
                 this.headers = result.sort();
             };
-            console.log(this.headers);
             fileReader.readAsText(fileToRead, "UTF-8");
         }
     }
@@ -146,7 +141,7 @@ export class LayoutPersonalizadoComponent implements OnInit {
                     this.listaLayoutValia = [];
                     this.headers = [];
                     this.lista = this.data.layout.filter(e => e.tipoArquivo === cod)[0].listaMapeamentos.map(e => {
-                        return { layout_patrocinador: e.header, layout_valia: e.chave };
+                        return { layout_patrocinador: e.layout_patrocinador, layout_valia: e.layout_valia };
                     });
                 }
             } else if (cod === 2) {
@@ -156,7 +151,7 @@ export class LayoutPersonalizadoComponent implements OnInit {
                     this.listaLayoutValia = [];
                     this.headers = [];
                     this.lista = this.data.layout.filter(e => e.tipoArquivo === cod)[0].listaMapeamentos.map(e => {
-                        return { layout_patrocinador: e.header, layout_valia: e.chave };
+                        return { layout_patrocinador: e.layout_patrocinador, layout_valia: e.layout_valia };
                     });
                 }
             } else if (cod === 3) {
@@ -166,7 +161,7 @@ export class LayoutPersonalizadoComponent implements OnInit {
                     this.listaLayoutValia = [];
                     this.headers = [];
                     this.lista = this.data.layout.filter(e => e.tipoArquivo === cod)[0].listaMapeamentos.map(e => {
-                        return { layout_patrocinador: e.header, layout_valia: e.chave };
+                        return { layout_patrocinador: e.layout_patrocinador, layout_valia: e.layout_valia };
                     });
                 }
             } else {
@@ -176,7 +171,7 @@ export class LayoutPersonalizadoComponent implements OnInit {
                     this.listaLayoutValia = [];
                     this.headers = [];
                     this.lista = this.data.layout.filter(e => e.tipoArquivo === cod)[0].listaMapeamentos.map(e => {
-                        return { layout_patrocinador: e.header, layout_valia: e.chave };
+                        return { layout_patrocinador: e.layout_patrocinador, layout_valia: e.layout_valia };
                     });
                 }
             }
@@ -189,14 +184,45 @@ export class LayoutPersonalizadoComponent implements OnInit {
 
     async criarLayout() {
         await this.utilService.enviarTemplate(this.codSelected, this.lista).then(resp => {
-            this.setStep(1)
+            Swal.fire({
+                title: 'Sucesso!',
+                type: 'success',
+                text: 'Seus arquivos foram enviados com sucesso.',
+                confirmButtonText: 'OK!',
+            }).then((result) => {
+                if (result.value) {
+                    this.router.navigateByUrl('/layout-personalizado');
+                    this.setStep(1);
+                }
+            });
         });
     }
 
-    onSubmit() {
-        console.log(this.empregadosInput);
-        console.log({
-            empregados: this.empregadosInput.nativeElement.files
-        });
+    async onSubmit() {
+        let timerInterval
+        Swal.fire({
+            title: 'Aguarde um momento',
+            timer: 2000,
+            onBeforeOpen: () => {
+                Swal.showLoading();
+            },
+            onClose: () => {
+                clearInterval(timerInterval)
+            }
+        }).then((result) => {
+            if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.timer
+            ) {
+                Swal.fire({
+                    title: 'Sucesso!',
+                    text: 'Seus arquivos foram enviados com sucesso.',
+                    footer: `<a href="/detalhe-remessa">Ver detalhes</a>`
+                })
+            }
+        })
+
     }
+
+
 }
