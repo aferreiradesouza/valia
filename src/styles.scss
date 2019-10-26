@@ -5,6 +5,11 @@
 h1 {
     margin-bottom: 50px;
     border-bottom: 1px solid #ccc !important;
+    color: #00418e; 
+}
+
+h2 {
+    color: #00418e; 
 }
 
 .btn-primary {
@@ -30,6 +35,11 @@ h1 {
     opacity: 0.5;
 }
 
+.card .card-body .number-counter {
+    font-size: 45px;
+    opacity: 0.5;
+}
+
 .card:hover {
 	box-shadow: 3px 3px 10px #000;
 	cursor: pointer;
@@ -43,21 +53,23 @@ h1 {
     transition: all 0.3s;
 }
 
-.card-active {
-	cursor: pointer;
-	transition: all 0.3s;
-    transform: scale(1.02);
-    background-color: #00418e !important;
+.card-no-link:hover {
+    box-shadow: 0 0 0 #FFF;
+    cursor: auto;
+	transition: none;
+    transform: none;
+    background-color: #FFF !important;
+    border: 1px solid #008cba;
 }
 
 .user {
-    color: #FFF;
-    font-size: 30px;
+   font-size: 13px;
+   margin-left: 10px;
 }
 
 .nome-sistema {
     color: #FFF;
-    font-size: 20px;
+    font-size: 26px;
 }
 
 .form-table .row {
@@ -109,4 +121,18 @@ h1 {
 .row-button {
     margin: 40px;
     text-align: center;
+}
+
+div {
+    /*border: 1px solid red;*/
+}
+
+.topbar-patrocionadora {
+    font-size: 13px;
+    padding: 10px;
+}
+
+.badge-light {
+    color: #222;
+    background-color: #ccc;
 }
