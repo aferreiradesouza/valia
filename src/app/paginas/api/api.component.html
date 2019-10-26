@@ -1,23 +1,57 @@
-<div class="navbar navbar-expand-lg navbar-default bg-primary">
-    <div class="container">
-        <div class="col-auto logo">
-            <img src="./assets/img/logo.png" />
+<div class="container topbar-patrocionadora">
+        <div class="row">
+            <div class="col-sm-6">
+                Patrocinadora: <strong>Ferrovia Centro-Atlântica S.A.</strong>
+            </div>
+            <div class="col-sm-6 text-right align-middle">
+                <span class="badge badge-pill badge-light user">Geovane Carmo <i class="fa fa-user"></i></span>
+            </div>
         </div>
-        <div class="col-auto text-center nome-sistema">
-            Portal de Administração de Arquivos
-        </div>
-        <div class="text-right">
-            <i class="fa fa-user-circle user"></i>
-        </div>
-
     </div>
-</div>
+    
+    <div class="navbar navbar-top navbar-expand-lg navbar-default bg-primary">
+        <div class="container">
+            <div class="col-12 col-sm-12 col-md-auto logo">
+                <img src="./assets/img/logo.png" class="img-responsive" />
+            </div>
+            <div class="col-sm-10 nome-sistema text-sm-left">
+                Portal de Administração de Arquivos
+            </div>
+        </div>
+    </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light menu">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
+                aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  [routerLink]="['/api']">Upload de Arquivos</a>
+                    </li>
+                </ul>
+    
+                <form class="form-inline my-2 my-lg-0">
+                    Remessa Nº&nbsp; <input class="form-control mr-sm-2" type="number" placeholder="Pesquisar remessa">
+                    <button class="btn btn-primary my-2 my-sm-0" type="submit">OK</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 
 <div class="container">
 
+    <h1>Upload de Arquivos</h1>
+
     <div class="row">
         <div class="col-md-4">
-            <div class="card text-white bg-primary mb-3 card-active">
+            <div class="card card-over text-white bg-primary mb-3 card-active">
                 <div class="card-body">
                     <h4 class="card-title float-left">API</h4>
                     <i class="fa fa-code float-right"></i>
@@ -26,7 +60,7 @@
         </div>
 
         <div class="col-md-4">
-            <div class="card text-white bg-primary mb-3" (click)="configurarLayoutValia()">
+            <div class="card card-over text-white bg-primary mb-3" (click)="configurarLayoutValia(2)">
                 <div class="card-body">
                     <h4 class="card-title float-left">Layout Valia</h4>
                     <i class="fa fa-list-alt float-right"></i>
@@ -35,7 +69,7 @@
         </div>
 
         <div class="col-md-4">
-            <div class="card text-white bg-primary mb-3" (click)="configurarLayoutPersonalizado()">
+            <div class="card card-over text-white bg-primary mb-3" (click)="configurarLayoutPersonalizado()">
                 <div class="card-body">
                     <h4 class="card-title float-left">Layout Personalizado</h4>
                     <i class="fa fa-user-edit float-right"></i>
@@ -45,7 +79,7 @@
     </div>
 
 
-    <h1 class="pt-3">API</h1>
+    <h2 class="pt-3">API</h2>
     <form>
         <fieldset class="form-table">
             <div class="form-group row">
