@@ -7,12 +7,16 @@ import { LoginComponent } from './paginas/login/login.component';
 import { AppRouting } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeAlternativaComponent } from './paginas/home-alternativa/home-alternativa.component';
+import { DetalheRemessaComponent } from './paginas/detalhe-remessa/detalhe-remessa.component';
+import { AnaliseCriticasComponent } from './paginas/analise-criticas/analise-criticas.component';
 
 const PAGINAS = [
   HomeComponent,
   LoginComponent,
-  HomeAlternativaComponent
-]
+  HomeAlternativaComponent,
+  DetalheRemessaComponent,
+  AnaliseCriticasComponent
+];
 
 @NgModule({
   declarations: [
