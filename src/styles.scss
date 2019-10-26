@@ -177,3 +177,7 @@ h2 {
 .bg-white {
     background-color: #FFF !important;
 }
+
+.table-active, .table-active > th, .table-active > td {
+    background-color: rgba(68, 68, 68, 0.075);
+}
