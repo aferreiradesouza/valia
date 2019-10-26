@@ -66,6 +66,7 @@ h2 {
 
 .card-no-link:hover {
     border: 1px solid #008cba;
+    background-color: #FFF !important;
 }
 
 .border-bottom {
@@ -136,10 +137,6 @@ h2 {
     text-align: center;
 }
 
-div {
-    /*border: 1px solid red;*/
-}
-
 .topbar-patrocionadora {
     font-size: 13px;
     padding: 10px;
@@ -159,6 +156,7 @@ div {
     margin-bottom: 50px;
     box-shadow:  5px 5px 5px #CCC;
     padding: 0;
+    background-color: #FFF !important;
 }
 
 .menu .navbar-nav .nav-item .nav-link {
@@ -170,4 +168,8 @@ div {
     padding: 15px 15px;
     color: #FFF;
     background-color: #00418e;
+}
+
+.table-edita-dados thead tr th {
+    white-space: nowrap;
 }
