@@ -48,7 +48,7 @@
 
 <div class="container-fluid">
 
-    <h1>Análise de Arquivos - Remessa Nº 0145 <button class="btn btn-secondary btn-sm float-right mt-3">Voltar</button>
+    <h1>Análise de Arquivos - Remessa Nº 0145
     </h1>
 
     Arquivo<h3>0055-CADASTRO-201910260951.TXT</h3>
@@ -108,7 +108,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of ' '.repeat(3).split('')">
+                <tr>
                     <td> <input type="text" class="form-control" value="15" readonly /></td>
                     <td> <input type="text" class="form-control" value="154" /></td>
                     <td> <input type="text" class="form-control is-invalid" value="1545" /></td>
@@ -116,7 +116,151 @@
                     <td> <input type="text" class="form-control" value="GEOVANE CARMO" /></td>
                     <td> <input type="text" class="form-control" value="1234567890" /></td>
                     <td> <input type="text" class="form-control" value="111430448" /></td>
-                    <td> <input type="text" class="form-control is-invalid" /></td>
+                    <td>
+                        <div class="input-group">
+                            <input type="text" [(ngModel)]="sugestao1.value" class="form-control is-invalid" value="DETRAN" />
+                            <div class="input-group-append" *ngIf="sugestao1.showPrepend">
+                                <span class="input-group-text" id="basic-addon2">
+                                    <button class="btn btn-success" (click)="aceitar(1)">
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                    <button class="btn btn-danger" (click)="rejeitar(1)">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="31322" /></td>
+                    <td> <input type="text" class="form-control" value="1" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="JOAO SANTOS" /></td>
+                    <td> <input type="text" class="form-control" value="MARIA SANTOS" /></td>
+                    <td> <input type="text" class="form-control" value="1" /></td>
+                    <td> <input type="text" class="form-control" value="AV DAS AMERICAS, 4000" /></td>
+                    <td> <input type="text" class="form-control" value="BARRA DA TIJUCA" /></td>
+                    <td> <input type="text" class="form-control" value="RIO DE JANEIRO" /></td>
+                    <td> <input type="text" class="form-control" value="RJ" /></td>
+                    <td> <input type="text" class="form-control" value="22933000" /></td>
+                    <td> <input type="text" class="form-control" value="21" /></td>
+                    <td> <input type="text" class="form-control" value="42456655" /></td>
+                    <td> <input type="text" class="form-control" value="03/01/2019" /></td>
+                    <td> <input type="text" class="form-control" value="237" /></td>
+                    <td> <input type="text" class="form-control" value="3636" /></td>
+                    <td> <input type="text" class="form-control" value="39435" /></td>
+                    <td> <input type="text" class="form-control" value="BRASILEIRO" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="5000" /></td>
+                    <td> <input type="text" class="form-control" value="GEOVANE.CARMO@VALIA.COM.BR" /></td>
+                    <td> <input type="text" class="form-control" value="21" /></td>
+                    <td> <input type="text" class="form-control" value="99886666" /></td>
+                    <td> <input type="text" class="form-control is-invalid" value="20/12/2020" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="32" /></td>
+                    <td> <input type="text" class="form-control" value="55487" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="5" /></td>
+                    <td> <input type="text" class="form-control" value="156458" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                </tr>
+                <tr>
+                    <td> <input type="text" class="form-control" value="15" readonly /></td>
+                    <td> <input type="text" class="form-control" value="154" /></td>
+                    <td> <input type="text" class="form-control is-invalid" value="1545" /></td>
+                    <td> <input type="text" class="form-control" value="545744" /></td>
+                    <td> <input type="text" class="form-control" value="GEOVANE CARMO" /></td>
+                    <td> <input type="text" class="form-control" value="1234567890" /></td>
+                    <td> <input type="text" class="form-control" value="111430448" /></td>
+                    <td>
+                        <div class="input-group">
+                            <input type="text" [(ngModel)]="sugestao2.value" class="form-control is-invalid" value="DETRAN" />
+                            <div class="input-group-append" *ngIf="sugestao2.showPrepend">
+                                <span class="input-group-text" id="basic-addon2">
+                                    <button class="btn btn-success" (click)="aceitar(2)">
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                    <button class="btn btn-danger" (click)="rejeitar(2)">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="31322" /></td>
+                    <td> <input type="text" class="form-control" value="1" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="JOAO SANTOS" /></td>
+                    <td> <input type="text" class="form-control" value="MARIA SANTOS" /></td>
+                    <td> <input type="text" class="form-control" value="1" /></td>
+                    <td> <input type="text" class="form-control" value="AV DAS AMERICAS, 4000" /></td>
+                    <td> <input type="text" class="form-control" value="BARRA DA TIJUCA" /></td>
+                    <td> <input type="text" class="form-control" value="RIO DE JANEIRO" /></td>
+                    <td> <input type="text" class="form-control" value="RJ" /></td>
+                    <td> <input type="text" class="form-control" value="22933000" /></td>
+                    <td> <input type="text" class="form-control" value="21" /></td>
+                    <td> <input type="text" class="form-control" value="42456655" /></td>
+                    <td> <input type="text" class="form-control" value="03/01/2019" /></td>
+                    <td> <input type="text" class="form-control" value="237" /></td>
+                    <td> <input type="text" class="form-control" value="3636" /></td>
+                    <td> <input type="text" class="form-control" value="39435" /></td>
+                    <td> <input type="text" class="form-control" value="BRASILEIRO" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="5000" /></td>
+                    <td> <input type="text" class="form-control" value="GEOVANE.CARMO@VALIA.COM.BR" /></td>
+                    <td> <input type="text" class="form-control" value="21" /></td>
+                    <td> <input type="text" class="form-control" value="99886666" /></td>
+                    <td> <input type="text" class="form-control is-invalid" value="20/12/2020" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="32" /></td>
+                    <td> <input type="text" class="form-control" value="55487" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="5" /></td>
+                    <td> <input type="text" class="form-control" value="156458" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                    <td> <input type="text" class="form-control" value="" /></td>
+                </tr>
+                <tr>
+                    <td> <input type="text" class="form-control" value="15" readonly /></td>
+                    <td> <input type="text" class="form-control" value="154" /></td>
+                    <td> <input type="text" class="form-control is-invalid" value="1545" /></td>
+                    <td> <input type="text" class="form-control" value="545744" /></td>
+                    <td> <input type="text" class="form-control" value="GEOVANE CARMO" /></td>
+                    <td> <input type="text" class="form-control" value="1234567890" /></td>
+                    <td> <input type="text" class="form-control" value="111430448" /></td>
+                    <td>
+                        <div class="input-group">
+                            <input type="text" [(ngModel)]="sugestao3.value" class="form-control is-invalid" value="DETRAN" />
+                            <div class="input-group-append" *ngIf="sugestao3.showPrepend">
+                                <span class="input-group-text" id="basic-addon2">
+                                    <button class="btn btn-success" (click)="aceitar(3)">
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                    <button class="btn btn-danger" (click)="rejeitar(3)">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </td>
                     <td> <input type="text" class="form-control" value="" /></td>
                     <td> <input type="text" class="form-control" value="31322" /></td>
                     <td> <input type="text" class="form-control" value="1" /></td>
@@ -167,8 +311,8 @@
 
     <div class="row">
         <div class="col row-button">
-            <button class="btn btn-lg btn-primary">Submeter Alterações</button> &nbsp; <button
-                class="btn btn-lg btn-outline-info">Cancelar</button>
+            <button class="btn btn-lg btn-primary" (click)="enviar()">Submeter Alterações</button> &nbsp; <button
+                class="btn btn-lg btn-outline-info" (click)="voltar()">Cancelar</button>
         </div>
     </div>
 

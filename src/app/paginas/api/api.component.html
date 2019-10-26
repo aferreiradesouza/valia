@@ -96,38 +96,10 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Arquivo modelo:</label>
-                <pre>
-                        <table>
-                        <thead>
-                            <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                            </tr>
-                        </tbody>
-                        </table>
-                    </pre>
+                <label class="col-sm-2 col-form-label">Curl:</label>
+                <div style="height: 150px; width: 100%; background-color: #474747; color: white; padding: 10px;border-radius: 4px;">
+                    curl -X POST "https://hackathonvaliaapi20191025091622.azurewebsites.net/Template/e5cee7d3-f8e1-498f-80a3-b6627ac3201d/templates/importartemplate/1" -H "accept: text/plain" -H "Content-Type: application/json-patch+json" -d "[{{'{'}}\"layout_patrocinador\":\"string\",\"layout_valia\":0{{'}'}}]"
+                </div>
             </div>
         </fieldset>
     </form>
