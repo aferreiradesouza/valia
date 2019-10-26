@@ -59,29 +59,31 @@
 
     <h2 class="pt-3">Últimos envios</h2>
 
-    <table class="table">
-        <thead>
-            <tr class="table-active">
-                <th scope="col" class="text-center">Data de envio</th>
-                <th scope="col" class="text-center">Data de processamento</th>
-                <th scope="col" class="text-center">Código da remessa</th>
-                <th scope="col" class="text-center">Qtd Críticas</th>
-                <th scope="col" ></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of ' '.repeat(5).split('')">
-                <td class="text-center">25/10/2019</td>
-                <td class="text-center">25/10/2019</td>
-                <td class="text-center">015456</td>
-                <td class="text-center">150</td>
-                <td>
-                    <button class="btn btn-primary btn-sm" title="Ver detalhes">
-                        <i class="fa fa-search"></i> Detalhe
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr class="table-active">
+                    <th scope="col" class="text-center">Data de envio</th>
+                    <th scope="col" class="text-center">Data de processamento</th>
+                    <th scope="col" class="text-center">Código da remessa</th>
+                    <th scope="col" class="text-center">Qtd Críticas</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of ' '.repeat(5).split('')">
+                    <td class="text-center">25/10/2019</td>
+                    <td class="text-center">25/10/2019</td>
+                    <td class="text-center">015456</td>
+                    <td class="text-center">150</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" title="Ver detalhes">
+                            <i class="fa fa-search"></i> Detalhe
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </div>

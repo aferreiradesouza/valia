@@ -21,13 +21,13 @@ h2 {
 .logo {
 	background-color: #FFF;
 	margin: 0;
-	padding: 15px 20px;
+    padding: 15px 20px;
 }
 
 .navbar {
     border-top: 8px solid #00418e;
 	padding: 0;	
-	margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .card .card-body .fa {
@@ -48,7 +48,7 @@ h2 {
     background-color: #00418e !important;
 }
 
-.card:hover .card-body .fa{
+.card:hover .card-body .fa {
     opacity: 1;
     transition: all 0.3s;
 }
@@ -65,6 +65,9 @@ h2 {
 .user {
    font-size: 13px;
    margin-left: 10px;
+   color: #008cba !important;
+   padding: 6px 15px;
+   cursor: pointer;
 }
 
 .nome-sistema {
@@ -134,5 +137,5 @@ div {
 
 .badge-light {
     color: #222;
-    background-color: #ccc;
+    background-color: #e0e0e0;
 }
