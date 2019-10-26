@@ -27,4 +27,8 @@ export class LayoutValiaComponent implements OnInit {
     disabledButton() {
         return this.cadastro || this.beneficiarios || this.arrecadacao || this.IN26
     }
+
+    configurarLayoutValia(numero) {
+
+    }
 }

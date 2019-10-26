@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" [routerLink]="['/dashboard']">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/api']" routerLinkActive="router-link-active" >Upload de Arquivos</a>
@@ -105,7 +105,7 @@
                     <td class="text-center">015456</td>
                     <td class="text-center">150</td>
                     <td>
-                        <button class="btn btn-primary btn-sm" title="Ver detalhes">
+                        <button class="btn btn-primary btn-sm" (click)="irDetalhe()" title="Ver detalhes">
                             <i class="fa fa-search"></i> Detalhe
                         </button>
                     </td>
