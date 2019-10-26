@@ -31,7 +31,7 @@ export class AjaxService {
         return this.http.put<T>(url, body, options).toPromise();
     }
 
-    public async downloadFile(url: string, type: string) {
+    public async downloadFile(url: string, type?: string) {
         const options = {
             responseType: 'blob' as 'blob'
         };

@@ -1,49 +1,49 @@
 <div class="container topbar-patrocionadora">
-        <div class="row">
-            <div class="col-sm-6">
-                Patrocinadora: <strong>Ferrovia Centro-Atlântica S.A.</strong>
-            </div>
-            <div class="col-sm-6 text-right align-middle">
-                <span class="badge badge-pill badge-light user">Geovane Carmo <i class="fa fa-user"></i></span>
-            </div>
+    <div class="row">
+        <div class="col-sm-6">
+            Patrocinadora: <strong>Ferrovia Centro-Atlântica S.A.</strong>
+        </div>
+        <div class="col-sm-6 text-right align-middle">
+            <span class="badge badge-pill badge-light user">Geovane Carmo <i class="fa fa-user"></i></span>
         </div>
     </div>
-    
-    <div class="navbar navbar-top navbar-expand-lg navbar-default bg-primary">
-        <div class="container">
-            <div class="col-12 col-sm-12 col-md-auto logo">
-                <img src="./assets/img/logo.png" class="img-responsive" />
-            </div>
-            <div class="col-sm-10 nome-sistema text-sm-left">
-                Portal de Administração de Arquivos
-            </div>
+</div>
+
+<div class="navbar navbar-top navbar-expand-lg navbar-default bg-primary">
+    <div class="container">
+        <div class="col-12 col-sm-12 col-md-auto logo">
+            <img src="./assets/img/logo.png" class="img-responsive" />
+        </div>
+        <div class="col-sm-10 nome-sistema text-sm-left">
+            Portal de Administração de Arquivos
         </div>
     </div>
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light menu">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
-                aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbarColor03">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/dashboard']">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"  [routerLink]="['/api']">Upload de Arquivos</a>
-                    </li>
-                </ul>
-    
-                <form class="form-inline my-2 my-lg-0">
-                    Remessa Nº&nbsp; <input class="form-control mr-sm-2" type="number" placeholder="Pesquisar remessa">
-                    <button class="btn btn-primary my-2 my-sm-0" type="submit">OK</button>
-                </form>
-            </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light menu">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
+            aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/dashboard']">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/api']">Upload de Arquivos</a>
+                </li>
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                Remessa Nº&nbsp; <input class="form-control mr-sm-2" type="number" placeholder="Pesquisar remessa">
+                <button class="btn btn-primary my-2 my-sm-0" type="submit">OK</button>
+            </form>
         </div>
-    </nav>
+    </div>
+</nav>
 
 <div class="container">
 
@@ -86,16 +86,18 @@
                     <label class="col-sm-9 col-form-label">Arquivo de Empregados</label>
                     <label class="col-sm-3 col-form-label">Layout</label>
                     <div class="col-sm-9">
-                        <input #empregadosInput type="file" accept=".csv" name="empregados" [(ngModel)]="form.cadastro"
+                        <input #empregadosInput type="file" accept=".csv" name="empregados" [(ngModel)]="empregados"
                             (change)="onFileSelect($event.target)" readonly="" class="form-control-plaintext">
                     </div>
                     <div class="col-sm-3">
                         <button *ngIf="!verificarExistenciaTemplate(1)" class="btn btn-sm btn-success"
-                            (click)="setStep(2, 1, 'criar')" [disabled]="!form.cadastro"><i class="fa fa-plus"></i>
+                            (click)="setStep(2, 1, 'criar')" [disabled]="!empregados"><i
+                                class="fa fa-plus"></i>
                             Criar
                             Layout</button>
                         <button *ngIf="verificarExistenciaTemplate(1)" class="btn btn-sm btn-primary"
-                            (click)="setStep(2, 1, 'editar')" [disabled]="!form.cadastro"><i class="fa fa-edit"></i>
+                            (click)="setStep(2, 1, 'editar')" [disabled]="!empregados"><i
+                                class="fa fa-edit"></i>
                             Editar
                             Layout</button>
                     </div>
@@ -105,17 +107,17 @@
                     <label class="col-sm-9 col-form-label">Arquivo de Dependentes</label>
                     <label class="col-sm-3 col-form-label">Layout</label>
                     <div class="col-sm-9">
-                        <input #dependentesInput type="file" accept=".csv" name="dependentes"
-                            [(ngModel)]="form.beneficiarios" (change)="onFileSelect($event.target)" readonly=""
-                            class="form-control-plaintext">
+                        <input #dependentesInput type="file" accept=".csv" name="dependentes" [(ngModel)]="dependentes"
+                            (change)="onFileSelect($event.target)" readonly="" class="form-control-plaintext">
                     </div>
                     <div class="col-sm-3">
                         <button *ngIf="!verificarExistenciaTemplate(2)" class="btn btn-sm btn-success"
-                            (click)="setStep(2, 2, 'criar')" [disabled]="!form.beneficiarios"><i class="fa fa-plus"></i>
+                            (click)="setStep(2, 2, 'criar')" [disabled]="!dependentes"><i
+                                class="fa fa-plus"></i>
                             Criar
                             Layout</button>
                         <button *ngIf="verificarExistenciaTemplate(2)" class="btn btn-sm btn-primary"
-                            (click)="setStep(2, 2, 'editar')" [disabled]="!form.beneficiarios"><i
+                            (click)="setStep(2, 2, 'editar')" [disabled]="!dependentes"><i
                                 class="fa fa-edit"></i> Editar
                             Layout</button>
                     </div>
@@ -125,15 +127,17 @@
                     <label class="col-sm-9 col-form-label">Arquivo IN26</label>
                     <label class="col-sm-3 col-form-label">Layout</label>
                     <div class="col-sm-9">
-                        <input #in26Input type="file" accept=".csv" name="in26" [(ngModel)]="form.in26"
+                        <input #in26Input type="file" accept=".csv" name="in26" [(ngModel)]="in26"
                             (change)="onFileSelect($event.target)" readonly="" class="form-control-plaintext">
                     </div>
                     <div class="col-sm-3">
                         <button *ngIf="!verificarExistenciaTemplate(4)" class="btn btn-sm btn-success"
-                            (click)="setStep(2, 4, 'criar')" [disabled]="!form.in26"><i class="fa fa-plus"></i> Criar
+                            (click)="setStep(2, 4, 'criar')" [disabled]="!in26"><i class="fa fa-plus"></i>
+                            Criar
                             Layout</button>
                         <button *ngIf="verificarExistenciaTemplate(4)" class="btn btn-sm btn-primary"
-                            (click)="setStep(2, 4, 'editar')" [disabled]="!form.in26"><i class="fa fa-edit"></i> Editar
+                            (click)="setStep(2, 4, 'editar')" [disabled]="!in26"><i class="fa fa-edit"></i>
+                            Editar
                             Layout</button>
                     </div>
                 </div>
@@ -142,17 +146,18 @@
                     <label class="col-sm-9 col-form-label">Arquivo de Arrecadação</label>
                     <label class="col-sm-3 col-form-label">Layout</label>
                     <div class="col-sm-9">
-                        <input #arrecadacaoInput type="file" accept=".csv" name="arrecadacao"
-                            [(ngModel)]="form.arrecadacao" (change)="onFileSelect($event.target)" readonly=""
-                            class="form-control-plaintext">
+                        <input #arrecadacaoInput type="file" accept=".csv" name="arrecadacao" [(ngModel)]="arrecadacao"
+                            (change)="onFileSelect($event.target)" readonly="" class="form-control-plaintext">
                     </div>
                     <div class="col-sm-3">
                         <button *ngIf="!verificarExistenciaTemplate(3)" class="btn btn-sm btn-success"
-                            (click)="setStep(2, 3, 'criar')" [disabled]="!form.arrecadacao"><i class="fa fa-plus"></i>
+                            (click)="setStep(2, 3, 'criar')" [disabled]="!arrecadacao"><i
+                                class="fa fa-plus"></i>
                             Criar
                             Layout</button>
                         <button *ngIf="verificarExistenciaTemplate(3)" class="btn btn-sm btn-primary"
-                            (click)="setStep(2, 3, 'editar')" [disabled]="!form.arrecadacao"><i class="fa fa-edit"></i>
+                            (click)="setStep(2, 3, 'editar')" [disabled]="!arrecadacao"><i
+                                class="fa fa-edit"></i>
                             Editar
                             Layout</button>
                     </div>
@@ -212,7 +217,8 @@
         </div>
 
         <div class="row-button">
-            <button class="btn btn-primary btn-lg" (click)="criarLayout()">Criar Layout</button>
+            <button class="btn btn-primary btn-lg" (click)="criarLayout()" [disabled]="listaLayoutValia.length">Criar
+                Layout</button>
         </div>
     </ng-container>
 </div>

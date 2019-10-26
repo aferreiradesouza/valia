@@ -15,11 +15,14 @@ const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'api', component: ApiComponent },
-    { path: 'layout-personalizado', component: LayoutPersonalizadoComponent, resolve: { data: LayoutPersonalizadoResolver } },
+    {
+        path: 'layout-personalizado', component: LayoutPersonalizadoComponent, resolve: { data: LayoutPersonalizadoResolver },
+        runGuardsAndResolvers: 'always'
+    },
     { path: 'layout-valia', component: LayoutValiaComponent },
-    { path: 'dashboard', component: DashboardComponent},
-    { path: 'detalhe-remessa', component: DetalheRemessaComponent},
-    { path: 'analise-criticas', component: AnaliseCriticasComponent},
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'detalhe-remessa', component: DetalheRemessaComponent },
+    { path: 'analise-criticas', component: AnaliseCriticasComponent },
 ];
 
 @NgModule({
