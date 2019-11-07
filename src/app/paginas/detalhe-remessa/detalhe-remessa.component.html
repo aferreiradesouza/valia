@@ -1,0 +1,258 @@
+<div class="container topbar-patrocionadora">
+    <div class="row">
+        <div class="col-sm-6">
+            Patrocinadora: <strong>Ferrovia Centro-Atlântica S.A.</strong>
+        </div>
+        <div class="col-sm-6 text-right align-middle">
+            <span class="badge badge-pill badge-light user">Geovane Carmo <i class="fa fa-user"></i></span>
+        </div>
+    </div>
+</div>
+
+<div class="navbar navbar-top navbar-expand-lg navbar-default bg-primary">
+    <div class="container">
+        <div class="col-12 col-sm-12 col-md-auto logo">
+            <img src="./assets/img/logo.png" class="img-responsive" />
+        </div>
+        <div class="col-sm-10 nome-sistema text-sm-left">
+            Sistema Integrado de Arquivos
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light menu">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
+            aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/dashboard']">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/api']">Upload de Arquivos</a>
+                </li>
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                Remessa Nº&nbsp; <input class="form-control mr-sm-2" type="number" placeholder="Pesquisar remessa">
+                <button class="btn btn-primary my-2 my-sm-0" type="submit">OK</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <h1>Remessa Nº 0145 <button class="btn btn-secondary btn-sm float-right mt-3">Voltar</button></h1>
+
+    <div class="row">
+        <div class="col-3">
+            <strong>Enviado por:</strong>
+        </div>
+        <div class="col-2">Geovane Carmo</div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <strong>Data de envio:</strong>
+        </div>
+        <div class="col-2">26/10/2019</div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <strong>Data de processamento:</strong>
+        </div>
+        <div class="col-2">26/10/2019</div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <strong>Data de referência:</strong>
+        </div>
+        <div class="col-2">10/2019</div>
+    </div>
+
+    <br>
+
+    Arquivo<h3>0055-CADASTRO-201910260951.TXT</h3>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr class="table-active">
+                    <th scope="col" class="text-center">Data de processamento</th>
+                    <th scope="col" class="text-center">Total de registros</th>
+                    <th scope="col" class="text-center text-success">Registros aceitos</th>
+                    <th scope="col" class="text-center text-danger">Registros criticados</th>
+                    <th scope="col" class="text-center">Download</th>
+                    <th scope="col" class="text-center text-danger"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of ' '.repeat(1).split('')">
+                    <td class="text-center font-weight-bold">25/10/2019</td>
+                    <td class="text-center font-weight-bold">1457</td>
+                    <td class="text-center text-success font-weight-bold">1450</td>
+                    <td class="text-center text-danger font-weight-bold">7</td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-primary" (click)="baixar()">
+                            <i class="fa fa-download"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" (click)="irCriticas()" title="">
+                            <i class="fa fa-search"></i> Analisar Críticas
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="6" class="">
+                        <h5>Histórico de Ajustes:</h5>
+                    </td>
+                </tr>
+
+                <tr *ngFor="let item of ' '.repeat(1).split('')">
+                    <td class="text-center font-weight-bold">25/10/2019</td>
+                    <td class="text-center font-weight-bold">7</td>
+                    <td class="text-center text-success font-weight-bold">1</td>
+                    <td class="text-center text-danger font-weight-bold">6</td>
+                    <td class="text-center" colspan="2">
+                        <strong>Ajustado por:</strong> Valia (81254729)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    Arquivo<h3>0055-BENEFICIARIO-201910260951.TXT</h3>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr class="table-active">
+                    <th scope="col" class="text-center">Data de processamento</th>
+                    <th scope="col" class="text-center">Total de registros</th>
+                    <th scope="col" class="text-center text-success">Registros aceitos</th>
+                    <th scope="col" class="text-center text-danger">Registros criticados</th>
+                    <th scope="col" class="text-center">Download</th>
+                    <th scope="col" class="text-center text-danger"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of ' '.repeat(1).split('')">
+                    <td class="text-center font-weight-bold">25/10/2019</td>
+                    <td class="text-center font-weight-bold">50</td>
+                    <td class="text-center text-success font-weight-bold">50</td>
+                    <td class="text-center text-danger font-weight-bold">0</td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-primary" (click)="baixar()">
+                            <i class="fa fa-download"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-default btn-sm" title="" disabled>
+                            <i class="fa fa-ban"></i> Analisar Críticas
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="6" class="">
+                        <h5>Histórico de Ajustes:</h5>
+                    </td>
+                </tr>
+
+                <tr *ngFor="let item of ' '.repeat(1).split('')">
+                    <td class="text-center font-weight-bold">25/10/2019</td>
+                    <td class="text-center font-weight-bold">5</td>
+                    <td class="text-center text-success font-weight-bold">5</td>
+                    <td class="text-center text-danger font-weight-bold">0</td>
+                    <td class="text-center" colspan="2">
+                        <strong>Ajustado por:</strong> FCA (81452147)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    Arquivo<h3>0055-IN26-201910260951.TXT</h3>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr class="table-active">
+                    <th scope="col" class="text-center">Data de processamento</th>
+                    <th scope="col" class="text-center">Total de registros</th>
+                    <th scope="col" class="text-center text-success">Registros aceitos</th>
+                    <th scope="col" class="text-center text-danger">Registros criticados</th>
+                    <th scope="col" class="text-center">Download</th>
+                    <th scope="col" class="text-center text-danger"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of ' '.repeat(1).split('')">
+                    <td class="text-center font-weight-bold">25/10/2019</td>
+                    <td class="text-center font-weight-bold">5</td>
+                    <td class="text-center text-success font-weight-bold">5</td>
+                    <td class="text-center text-danger font-weight-bold">0</td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-primary" (click)="baixar()">
+                            <i class="fa fa-download"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-default btn-sm" title="" disabled>
+                            <i class="fa fa-ban"></i> Analisar Críticas
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    Arquivo<h3>0055-ARRECADACAO-201910260951.TXT</h3>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr class="table-active">
+                    <th scope="col" class="text-center">Data de processamento</th>
+                    <th scope="col" class="text-center">Total de registros</th>
+                    <th scope="col" class="text-center text-success">Registros aceitos</th>
+                    <th scope="col" class="text-center text-danger">Registros criticados</th>
+                    <th scope="col" class="text-center">Download</th>
+                    <th scope="col" class="text-center text-danger"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of ' '.repeat(1).split('')">
+                    <td class="text-center font-weight-bold">25/10/2019</td>
+                    <td class="text-center font-weight-bold">150</td>
+                    <td class="text-center text-success font-weight-bold">150</td>
+                    <td class="text-center text-danger font-weight-bold">0</td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-primary" (click)="baixar()">
+                            <i class="fa fa-download"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-default btn-sm" title="" disabled>
+                            <i class="fa fa-ban"></i> Analisar Críticas
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
